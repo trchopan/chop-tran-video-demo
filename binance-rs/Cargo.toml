@@ -1,0 +1,23 @@
+[package]
+name = "binance-rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.68"
+chrono = { version = "0.4.23", features = ["serde"] }
+clap = { version = "4.1.4", features = ["derive"] }
+config = { version = "0.13.3", features = ["toml"], default-features = false }
+env_logger = "0.10.0"
+hex = "0.4.3"
+hmac = "0.12.1"
+log = "0.4.17"
+reqwest = { version = "0.11.14", features = ["json", "blocking"] }
+serde = { version = "1.0.152", features = ["derive"] }
+serde_json = "1.0.91"
+sha2 = "0.10.6"
+tokio = { version = "1.25.0", features = ["full"] }
+toml = "0.7.1"
+

@@ -1,0 +1,5 @@
+block: 123
+previous_hash: 000005783b764259d382017d91a36d206d0600e2cbb3567748f46a33fe9297cf
+transactions:
+    - Alice transfer Bob 5 coin
+    - Bob transfer Chop 10 coin

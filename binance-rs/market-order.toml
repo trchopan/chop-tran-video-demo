@@ -1,0 +1,4 @@
+symbol = "BTCUSDT"
+side = "SELL"
+type = "MARKET"
+quantity = "1"

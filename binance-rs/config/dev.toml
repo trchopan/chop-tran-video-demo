@@ -1,0 +1,9 @@
+api_key = "<insert_api_key>"
+secret_key = "<insert_secret_key>"
+
+[binance]
+endpoint = "https://testnet.binance.vision"
+get_account = "/api/v3/account"
+get_avg_price = "/api/v3/avgPrice"
+get_all_orders = "/api/v3/allOrders"
+post_new_order = "/api/v3/order"

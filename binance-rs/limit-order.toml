@@ -1,0 +1,7 @@
+symbol = "BTCUSDT"
+side = "BUY"
+type = "MARKET"
+quantity = "0.001"
+price = "20000"
+timeInForce = "GTC"
+
