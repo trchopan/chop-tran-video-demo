@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: demo-app-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 100Mi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+  labels:
+    app: demo-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+        - name: demo-app
+          image: docker-registry.chop.dev:5000/demo-app:v0.0.1
+          imagePullPolicy: Always
+          env:
+            - name: GIN_MODE
+              value: 'release'
+            - name: DATA_DIR
+              value: '/data'
+          volumeMounts:
+            - name: demo-app-vol
+              mountPath: /data
+      volumes:
+        - name: demo-app-vol
+          persistentVolumeClaim:
+            claimName: demo-app-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app-lb
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 5601
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: demo-app
