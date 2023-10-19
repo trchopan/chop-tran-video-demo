@@ -22,3 +22,11 @@ Tiếp theo thực hành dựng cụm Kubernetes thì chạy các chương trìn
 Video này mình sử dụng Circle CI và ArgoCD để dựng lên một chuỗi CICD. Phục vụ cho việc release các ứng dụng do mình tự quản lý.
 
 [https://www.youtube.com/watch?v=82I7Z367CNw](https://www.youtube.com/watch?v=82I7Z367CNw)
+
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2022-, Quang Tran.
+
